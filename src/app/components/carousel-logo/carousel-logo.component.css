@@ -1,0 +1,15 @@
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.slider-content {
+  display: flex;
+  animation: slide 50s linear infinite;
+  width: max-content; /* Para evitar corte brusco */
+}
+
