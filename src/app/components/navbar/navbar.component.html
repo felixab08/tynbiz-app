@@ -224,7 +224,7 @@
         </svg>
       </button>
     </div>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+    <div class="hidden w-full md:block md:w-auto" id="navbar-language">
       <ul
         class="navbar-nav flex flex-col rounded-lg md:flex-row md:space-x-8 md:mt-0"
       >
@@ -234,7 +234,7 @@
             routerLinkActive="text-primary"
             class="block nav-link nav-link:hover py-2 px-3"
             aria-current="page"
-            >Home</a
+            >{{ "navbar.home" | translate }}</a
           >
         </li>
         <li class="nav-item">
@@ -242,7 +242,7 @@
             [routerLink]="['/about']"
             routerLinkActive="text-primary"
             class="block nav-link nav-link:hover py-2 px-3"
-            >About</a
+            >{{ "navbar.about" | translate }}</a
           >
         </li>
         <li class="nav-item">
@@ -256,9 +256,9 @@
           >
         </li>
         <li class="nav-item">
-          <a href="#" class="block nav-link nav-link:hover py-2 px-3"
-            >Contact</a
-          >
+          <a href="#" class="block nav-link nav-link:hover py-2 px-3">{{
+            "navbar.contact" | translate
+          }}</a>
         </li>
       </ul>
     </div>

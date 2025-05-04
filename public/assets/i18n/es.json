@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "contact": "Contacto"
+  },
+  "home": {
+    "header_hero": {
+      "title": "Tynbiz una solucion para tus ventas",
+      "subtitle": "Impulsa las ventas de tu tienda Online",
+      "description": "Tynbiz brinda una sala interactiva personalizado para las ventas, donde podras unirte en tus compras entre usuarios, usuarios con el vendedor y el vendedor con muchos usuarios.",
+      "button": "Prueba gratuita",
+      "demo": "Solicita tu demo"
+    }
+  }
+}

@@ -1,9 +1,13 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
+import { HeroCard } from '@app/interfaces/hero-card.interface';
 @Component({
   selector: 'tyn-hero',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './hero.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeroComponent { }
+export class HeroComponent {
+  heroContent = input.required<HeroCard>();
+}
