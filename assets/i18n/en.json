@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "header_hero": {
+      "title": "Tynbiz a solution for your sales",
+      "subtitle": "Boost your online store sales",
+      "description": "Tynbiz provides a personalized interactive room for sales, where you can join in your purchases between users, users with the seller and the seller with many users.",
+      "button": "Free trial",
+      "demo": "Request your demo"
+    }
+  }
+}
