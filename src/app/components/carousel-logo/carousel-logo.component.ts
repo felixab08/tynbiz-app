@@ -12,23 +12,19 @@ export class CarouselLogoComponent  implements AfterViewInit{
   @ViewChild('slider') slider!: ElementRef<HTMLDivElement>;
 
   logos = [
-    './assets/1.png',
-    './assets/2.png',
-    './assets/3.png',
-    './assets/4.png',
-    './assets/5.png',
-    './assets/6.png',
-    './assets/7.png',
-    './assets/8.png',
-    './assets/9.png',
-    './assets/10.png'
+    './assets/img/1.png',
+    './assets/img/2.png',
+    './assets/img/3.png',
+    './assets/img/4.png',
+    './assets/img/5.png',
+    './assets/img/6.png',
+    './assets/img/7.png',
+    './assets/img/8.png',
+    './assets/img/9.png',
+    './assets/img/10.png'
   ];
   ngAfterViewInit() {
     const sliderElement = this.slider.nativeElement;
     sliderElement.innerHTML += sliderElement.innerHTML; // Duplica los logos para un loop continuo
   }
-
-
-
-
 }
