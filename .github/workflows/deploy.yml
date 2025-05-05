@@ -3,7 +3,7 @@ name: Build and Deploy #Nombre de la configuracion
 on:
   push: # evento de activacion
     branches:
-      - main # Rama con el cual va a trabajar
+      - develop # Rama con el cual va a trabajar
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest #Plataforma donde se va trabajar
