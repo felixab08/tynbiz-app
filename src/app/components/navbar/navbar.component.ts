@@ -8,6 +8,7 @@ import {
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MiltiLangService } from '../../services/multi-lang.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { environment } from '@environments/environment.development';
 @Component({
   selector: 'tyn-navbar',
   imports: [RouterLink, RouterLinkActive, CommonModule, TranslateModule],
@@ -16,7 +17,7 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class NavbarComponent {
   // [TODO] : create a variable in enviroment file
-  lenguagesName = 'Español (ES)';
+  lenguagesName = environment.spanish;
   scrolled = false;
   _multiLanguageSrv = inject(MiltiLangService);
 
@@ -33,12 +34,12 @@ export class NavbarComponent {
   changeLanguage(lang: string) {
     if (lang === 'en') {
       // [TODO] : create a variable in enviroment file
-      this.lenguagesName = 'English (US)';
+      this.lenguagesName = environment.english;
       this._multiLanguageSrv.updateLanguage('en');
     }
     if (lang === 'es') {
       // [TODO] : create a variable in enviroment file
-      this.lenguagesName = 'Español (ES)';
+      this.lenguagesName = environment.spanish;
       this._multiLanguageSrv.updateLanguage('es');
     }
   }
