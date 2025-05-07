@@ -1,14 +1,12 @@
-<p>about works!</p>
+
 <section class="bg-fondo3">
   <div class="container py-28">
     <div class="my-10 text-center px-10 mx-auto max-w-screen-xl">
       <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none">
-        Sobre nosotros
+        {{ 'about.title' | translate }}
       </h1>
       <p class="mb-6 text-lg text-gray-500 lg:mb-8">
-        Trabajando en proyecto tynbiz para su pronto lanzamiento. Fuimos
-        participantes en el primer Concurso de Startup UNSCH y fuimos ganadores
-        de 3er lugar.
+        {{ 'about.description' | translate }}
       </p>
       <img src="./assets/img/22.jpg" alt="" />
     </div>
@@ -19,22 +17,12 @@
     <div class="flex-wrap items-center grid lg:grid-cols-12">
       <div class="col-span-6">
         <div class="my-10 px-10 mx-auto max-w-screen-xl">
-          <h6 class="uppercase text-primary font-bold mb-2">Como empezó</h6>
-          <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none">
-            NUESTRA HISTORIA
+          <h6 class="uppercase text-primary font-bold mb-2">{{'about.story.title' | translate}} </h6>
+          <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none uppercase">
+            {{'about.story.title2' | translate}}
           </h1>
           <p class="mb-6 text-lg text-gray-500 lg:mb-8">
-            En 2020, en la ciudad de Ayacucho, un grupo de jóvenes emprendedores
-            comenzó desarrollando sistemas básicos. Con pocos recursos pero con
-            gran compromiso, ayudaron a algunos negocios. Durante esos primeros
-            años, ganaron experiencia directa con las necesidades reales de los
-            pequeños negocios. A mediados de 2023, tras observar una tendencia
-            creciente hacia el comercio electrónico, identificaron un problema
-            común en muchas tiendas online: la atención al cliente era lenta,
-            desorganizada o inexistente. Fue así como nació la idea de crear una
-            plataforma Tynbiz que está en desarrollo. El Startup Tynbiz
-            resolverá una necesidad grande de los consumidores online de manera
-            mas interactiva para una compra mas decidida.
+            {{'about.story.description' | translate}}
           </p>
         </div>
       </div>
@@ -51,39 +39,18 @@
     <div>
       <div class="my-10 text-center px-10 mx-auto max-w-screen-xl">
         <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none">
-          Nuestro equipo
+          {{'about.team.title' | translate}}
         </h1>
       </div>
-      <div class="flex-wrap items-center grid lg:grid-cols-12">
-        <div class="col-span-6">
+      <div class="flex-wrap items-center grid md:grid-cols-2 lg:grid-cols-12">
+        <div class="md:col-span-1 lg:col-span-3" *ngFor="let user of users" >
           <tyn-user-card
-            [name]="'Marcelino Centeno'"
-            [title]="'CEO Founder'"
-            [description]="'Ingeniero de sistemas, con amplia experiencia en ventas y diseño UI/UX.'"
-          ></tyn-user-card>
-        </div>
-        <div class="col-span-6">
-          <tyn-user-card
-            [name]="'Areste Palomino Roberth'"
-            [title]="'CTO Founder'"
-            [description]="'Ingeniero de sistemas, con amplia experiencia en BD y diseño UI/UX.'"
-          ></tyn-user-card>
-        </div>
-        <div class="col-span-6">
-          <tyn-user-card
-            [name]="'Aroni Huamani Fredy'"
-            [title]="'COO Co-founder'"
-            [description]="'Docente, con amplia experiencia en gestion de proyectos.'"
-            [reverse]="true"
-          ></tyn-user-card>
-        </div>
-        <div class="col-span-6">
-          <tyn-user-card
-            [name]="'Valdez Ochoa David'"
-            [title]="'Backend Full stack'"
-            [description]="'Ingeniero civil, con amplia experiencia en gestion de proyectos.'"
-            [reverse]="true"
-          ></tyn-user-card>
+          [name]="user.name"
+          [title]="user.title"
+          [description]= "getTranslatedDescription(user.description)"
+          [imageSrc]="user.imageSrc"
+          [reverse]="user.reverse"
+        ></tyn-user-card>
         </div>
       </div>
     </div>

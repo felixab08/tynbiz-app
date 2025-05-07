@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { CarouselLogoComponent } from '../../components/carousel-logo/carousel-logo.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'tyn-home',
-  imports: [HeroComponent, CarouselLogoComponent],
+  imports: [HeroComponent, CarouselLogoComponent, TranslateModule],
   templateUrl: './home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

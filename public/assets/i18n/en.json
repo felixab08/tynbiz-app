@@ -4,6 +4,19 @@
     "about": "About",
     "contact": "Contact"
   },
+  "footer": {
+    "description": "A solution to generate more sales of your online store products, with more interactive customer service through Tynbiz room.",
+    "contact": {
+      "title": "Contact Us"
+    },
+    "social_media": {
+      "title": "Social Media"
+    },
+    "apply": {
+      "title": "Request",
+      "button": "Request Demo"
+    }
+  },
   "home": {
     "header_hero": {
       "title": "Tynbiz a solution for your sales",
@@ -11,6 +24,70 @@
       "description": "Tynbiz provides a personalized interactive room for sales, where you can join in your purchases between users, users with the seller and the seller with many users.",
       "button": "Free trial",
       "demo": "Request your demo"
+    },
+    "section_integration": {
+      "title": "Integrations",
+      "description": "Integrate Tynbiz into your online store. If you don't have an online store, you can create one with us on any of these platforms."
+    },
+    "section_how": {
+      "title": "How it works?",
+      "description": "Everything you need to know about how our product works.",
+      "step1": {
+        "title": "Register and link your store",
+        "description": "Create your account and connect your virtual store to our platform. In a few steps, you can manage customer service and real-time interactions in a centralized way."
+      },
+      "step2": {
+        "title": "Set up your profile and availability",
+        "description": "Customize your seller profile, set your hours of attention, and organize your availability so that your customers can contact you when they need it, or plan future interactions."
+      },
+      "step3": {
+        "title": "Create interaction events for your audience",
+        "description": "Organize and publish scheduled interaction events where your customers can join to get information about your products, promotions, or news. These events will be public, and you can attract more interested parties to your store."
+      },
+      "step4": {
+        "title": "Receive private customer service requests",
+        "description": "Customers can send you private inquiries at any time. These interactions are confidential and will be between you and the customer, ensuring personalized and private service."
+      },
+      "step5": {
+        "title": "Start personalized interactions with your customers",
+        "description": "Respond immediately to customer requests, either in real time or during scheduled events. You can address questions, resolve doubts, or guide buyers through a purchase process."
+      },
+      "step6": {
+        "title": "Manage and track interactions",
+        "description": "Keep a complete history of all private and public interactions, allowing you to track each customer's progress, resolve recurring issues, and offer more efficient service in future interactions."
+      }
+    },
+    "section_room": {
+      "title": "Use your shopping room",
+      "description": "Users accessing their shopping room can perform the following actions:",
+      "action1": {
+        "title": "add products",
+        "description": "Users can add any product from an online store to their shopping room."
+      },
+      "action2": {
+        "title": "Request to the seller",
+        "description": "Users can request assistance directly from the sales room."
+      },
+      "action3": {
+        "title": "Send invitation",
+        "description": "Users can send invitations to friends, family, and others from their shopping room."
+      }
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We are working on the Tynbiz project for its upcoming launch. We participated in the first UNSCH Startup Competition and won third place.",
+    "story": {
+      "title": "How it started",
+      "title2": "Our story",
+      "description": "In 2020, in the city of Ayacucho, a group of young entrepreneurs began developing basic systems. With few resources but great commitment, they helped some businesses. During those first years, they gained direct experience with the real needs of small businesses. In mid-2023, after observing a growing trend towards e-commerce, they identified a common problem in many online stores: customer service was slow, disorganized or non-existent. This is how the idea of creating a Tynbiz platform that is under development was born. The Tynbiz Startup will solve a large need for online consumers in a more interactive way for a more decisive purchase."
+    },
+    "team": {
+      "title": "Our team",
+      "user1_description": "Systems engineer, with extensive experience in sales and UI/UX design.",
+      "user2_description": "Systems engineer, with extensive experience in BD and UI/UX design.",
+      "user3_description": "Teacher, with extensive experience in project management.",
+      "user4_description": "Civil engineer, with extensive experience in project management."
     }
   }
 }
