@@ -9,6 +9,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MiltiLangService } from '../../services/multi-lang.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { environment } from '@environments/environment.development';
+import { PROYECT, TRADUCTION } from '@app/contantes/proyect.constant';
 @Component({
   selector: 'tyn-navbar',
   imports: [RouterLink, RouterLinkActive, CommonModule, TranslateModule],
@@ -17,7 +18,7 @@ import { environment } from '@environments/environment.development';
 })
 export class NavbarComponent {
   // [TODO] : create a variable in enviroment file
-  lenguagesName = environment.spanish;
+  lenguagesName = TRADUCTION.spanish;
   scrolled = false;
   _multiLanguageSrv = inject(MiltiLangService);
 
@@ -33,13 +34,11 @@ export class NavbarComponent {
    */
   changeLanguage(lang: string) {
     if (lang === 'en') {
-      // [TODO] : create a variable in enviroment file
-      this.lenguagesName = environment.english;
+      this.lenguagesName = TRADUCTION.english;
       this._multiLanguageSrv.updateLanguage('en');
     }
     if (lang === 'es') {
-      // [TODO] : create a variable in enviroment file
-      this.lenguagesName = environment.spanish;
+      this.lenguagesName = TRADUCTION.spanish;
       this._multiLanguageSrv.updateLanguage('es');
     }
   }
