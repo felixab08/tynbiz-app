@@ -1,0 +1,139 @@
+<div class="md:flex md:p-16 sm:px-0">
+  <ul
+    class="flex-column space-y space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0 pl-[4rem]"
+  >
+    <li>
+      <a
+        class="inline-flex items-center px-10 py-2 text-white bg-blue-700 rounded-lg active w-full dark:bg-blue-600"
+        aria-current="page"
+      >
+        Empezar prueba gratis
+      </a>
+    </li>
+    <li>
+      <a
+        class="inline-flex items-center px-10 py-2 rounded-lg hover:text-gray-900 bg-gray-50 hover:bg-gray-100 w-full dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
+      >
+        Solicitar una demo
+      </a>
+    </li>
+  </ul>
+  <div
+    class="p-16 bg-gray-50 text-medium text-gray-500 dark:text-gray-400 dark:bg-gray-800 rounded-lg w-full"
+  >
+    <form autocomplete="off" [formGroup]="myForm" (ngSubmit)="onSave()">
+      <div class="grid gap-6 mb-6 md:grid-cols-2">
+        <div>
+          <label
+            for="name"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Nombre</label
+          >
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 :text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          />
+          @if(formUtils.isValiedField(myForm,'name')){
+          <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+            <span class="font-medium">{{
+              formUtils.getFieldError(myForm, "name")
+            }}</span>
+          </p>
+          }
+        </div>
+        <div>
+          <label
+            for="lastName"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Apellidos</label
+          >
+          <input
+            type="text"
+            id="lastName"
+            formControlName="lastName"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          />
+        </div>
+        <div>
+          <label
+            for="email"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Correo electronico</label
+          >
+          <input
+            type="text"
+            id="email"
+            formControlName="email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 :text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          />
+        </div>
+        <div>
+          <label
+            for="phone"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >N° celular</label
+          >
+          <input
+            type="text"
+            id="phone"
+            formControlName="phone"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 :text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          />
+        </div>
+        <div>
+          <label
+            for="onlyneNameStore"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Nombre de la tienda online</label
+          >
+          <input
+            type="text"
+            id="onlyneNameStore"
+            formControlName="onlyneNameStore"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 :text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          />
+        </div>
+        <div>
+          <label
+            for="onlyneDirecctionStore"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Enlace de la tienda</label
+          >
+          <input
+            type="text"
+            id="onlyneDirecctionStore"
+            formControlName="onlyneDirecctionStore"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 :text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          />
+        </div>
+        <div>
+          <label
+            for="message"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Mensaje</label
+          >
+          <input
+            type="text"
+            id="message"
+            formControlName="message"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 :text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
