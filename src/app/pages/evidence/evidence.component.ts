@@ -1,3 +1,4 @@
+import { CommonModule, JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   FormBuilder,
@@ -9,7 +10,7 @@ import { FormUtils } from '@app/utils/form.util';
 
 @Component({
   selector: 'tyn-evidence',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule, JsonPipe],
   templateUrl: './evidence.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -21,11 +22,21 @@ export default class EvidenceComponent {
   myForm: FormGroup = this._fb.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     lastName: ['', [Validators.required, Validators.minLength(2)]],
-    email: ['', [Validators.required, Validators.min(0)]],
-    phone: [0, [Validators.required, Validators.min(9)]],
-    onlyneNameStore: ['', [Validators.required, Validators.min(0)]],
-    onlyneDirecctionStore: ['', [Validators.required, Validators.min(0)]],
-    message: ['', [Validators.required, Validators.min(0)]],
+    email: [
+      '',
+      [Validators.required, Validators.pattern(FormUtils.emailPattern)],
+    ],
+    phone: [, [Validators.required, Validators.min(9)]],
+    onlyneNameStore: ['', [Validators.required]],
+    onlyneDirecctionStore: [
+      '',
+      [
+        Validators.required,
+        Validators.min(0),
+        Validators.pattern(FormUtils.urlRegex),
+      ],
+    ],
+    message: [''],
   });
 
   onSave() {

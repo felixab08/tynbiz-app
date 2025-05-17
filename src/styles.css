@@ -3,117 +3,125 @@
 @import "flowbite/src/themes/default";
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
+@source "../node_modules/flowbite-datepicker";
 
 .container {
+  padding-right: var(--bs-gutter-x, 1rem);
+  padding-left: var(--bs-gutter-x, 1rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+h4 {
+  font-size: calc(1.269rem + 0.228vw);
+}
 
-    padding-right: var(--bs-gutter-x, 1rem);
-    padding-left: var(--bs-gutter-x, 1rem);
-    margin-right: auto;
-    margin-left: auto;
+@media (min-width: 640px) {
+  /* sm */
+  .container {
+    max-width: 540px;
   }
-  h4 {
-    font-size:  calc(1.269rem + 0.228vw);
-  }
+}
 
-  @media (min-width: 640px) { /* sm */
-    .container { max-width: 540px; }
+@media (min-width: 768px) {
+  /* md */
+  .container {
+    max-width: 720px;
   }
+}
 
-  @media (min-width: 768px) { /* md */
-    .container { max-width: 720px; }
+@media (min-width: 1024px) {
+  /* lg */
+  .container {
+    max-width: 960px;
   }
+}
 
-  @media (min-width: 1024px) { /* lg */
-    .container { max-width: 960px; }
+@media (min-width: 1280px) {
+  /* xl */
+  .container {
+    max-width: 1140px;
   }
+}
+:root {
+  --colorPrimary: #5d25b5;
+  --colorPrimaryLight: #7e4cfc;
+  --colorPrimaryDark: #3b0f8c;
+  --colorText: #5022e2;
+  --colorSecondary: #a7a2e9;
+  --colorFondo: #e5e1ff;
+  --colorNav: #f9fafd;
+  --colorFondo3: #ece7f5;
+  --colorWith: #fffefc;
+}
+.btn-primary {
+  background-color: var(--colorPrimary) !important;
+  font-size: 1rem !important;
+  color: var(--colorWith) !important;
+  padding: 0.75rem 1.25rem !important;
+  font-weight: var(--font-weight-semibold);
+}
+.btn-primary:hover {
+  background-color: var(--colorPrimaryLight) !important;
+}
+.btn-icon {
+  color: var(--colorPrimary) !important;
+}
+.btn-icon:hover {
+  background-color: var(--colorPrimary) !important;
+  color: var(--colorWith) !important;
+}
+.btn-icon:focus {
+  background-color: var(--colorPrimaryDark) !important;
+  color: var(--colorWith) !important;
+}
 
-  @media (min-width: 1280px) { /* xl */
-    .container { max-width: 1140px; }
-  }
-  :root {
-    --colorPrimary: #5d25b5;
-    --colorPrimaryLight: #7e4cfc;
-    --colorPrimaryDark: #3b0f8c;
-    --colorText: #5022E2 ;
-    --colorSecondary: #A7A2E9 ;
-    --colorFondo: #E5E1FF ;
-    --colorNav: #F9FAFD  ;
-    --colorFondo3: #ece7f5 ;
-    --colorWith: #FFFEFC ;
-  }
-  .btn-primary {
+@layer utilities {
+  .bg-primario {
     background-color: var(--colorPrimary) !important;
-    font-size: 1rem !important;
-    color: var(--colorWith) !important;
-    padding: 0.75rem 1.25rem !important;
-    font-weight: var(--font-weight-semibold)
-    ;
-
   }
-  .btn-primary:hover {
+  .bg-primario-light {
     background-color: var(--colorPrimaryLight) !important;
-
   }
-  .btn-icon{
+  .bg-primario-dark {
+    background-color: var(--colorPrimaryDark) !important;
+  }
+  .bg-secundario {
+    background-color: var(--colorSecondary) !important;
+  }
+  .bg-nav {
+    background-color: var(--colorNav) !important;
+  }
+  .bg-fondo3 {
+    background-color: var(--colorFondo3) !important;
+  }
+  .text-primary {
     color: var(--colorPrimary) !important;
   }
-  .btn-icon:hover{
-    background-color: var(--colorPrimary) !important;
-    color: var(--colorWith) !important;
+  .text-secundario {
+    color: var(--colorText) !important;
   }
-  .btn-icon:focus{
-    background-color: var(--colorPrimaryDark) !important;
-    color: var(--colorWith) !important;
+  .border-primary {
+    border-color: var(--colorPrimary) !important;
   }
+  .navbar-nav {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
 
-  @layer utilities{
-    .bg-primario {
-      background-color: var(--colorPrimary) !important;
-    }
-    .bg-primario-light {
-      background-color: var(--colorPrimaryLight) !important;
-    }
-    .bg-primario-dark {
-      background-color: var(--colorPrimaryDark) !important;
-    }
-    .bg-secundario {
-      background-color: var(--colorSecondary) !important;
-    }
-    .bg-nav{
-      background-color: var(--colorNav) !important;
-    }
-    .bg-fondo3{
-      background-color: var(--colorFondo3) !important;
-    }
-    .text-primary {
-      color: var(--colorPrimary) !important;
-    }
-    .text-secundario {
-      color: var(--colorText) !important;
-    }
-    .border-primary {
-      border-color: var(--colorPrimary) !important;
-    }
-    .navbar-nav {
-      margin-left: auto;
-      margin-right: auto;
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-    }
-    .navbar-nav .nav-item {
-      margin: 0 1rem;
-    }
-    .navbar-nav .nav-item .nav-link {
-      text-decoration: none;
-      color: var(--color-gray-500);
-      font-weight: bold;
-      padding: 0.5rem 1rem;
-      border-radius: 0.375rem;
-
-    }
-    .navbar-nav .nav-item .nav-link:hover {
-      color: var(--color-black);
-    }
+    align-items: center;
+    justify-content: center;
   }
+  .navbar-nav .nav-item {
+    margin: 0 1rem;
+  }
+  .navbar-nav .nav-item .nav-link {
+    text-decoration: none;
+    color: var(--color-gray-500);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+  }
+  .navbar-nav .nav-item .nav-link:hover {
+    color: var(--color-black);
+  }
+}
