@@ -14,7 +14,7 @@ export const routes: Routes = [
   },
   {
     path: 'evidence',
-    loadComponent: () => import('./pages/evidence/evidence.component'),
+    loadChildren: () => import('./pages/evidence/evidence.routes'),
   },
   { path: '**', redirectTo: 'home' },
 ];
