@@ -26,7 +26,7 @@ export default class EvidenceComponent {
       '',
       [Validators.required, Validators.pattern(FormUtils.emailPattern)],
     ],
-    phone: [, [Validators.required, Validators.min(9)]],
+    phone: [, [Validators.required, Validators.minLength(9), Validators.maxLength(9)]],
     onlyneNameStore: ['', [Validators.required]],
     onlyneDirecctionStore: [
       '',
