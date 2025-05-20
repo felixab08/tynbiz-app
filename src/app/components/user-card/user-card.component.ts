@@ -1,21 +1,24 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, ViewChild, ElementRef } from '@angular/core';
-
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  ViewChild,
+  ElementRef,
+  input,
+} from '@angular/core';
+import { UserCompany } from '@app/interfaces/hero-card.interface';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'tyn-user-card',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './user-card.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
 })
 export class UserCardComponent {
-
-  @Input() name: string = '';
-@Input() title: string = '';
-@Input() description: string = '';
-@Input() imageSrc: string = '';
-@Input() reverse: boolean = false;
+  usersCompany = input.required<UserCompany[]>();
 
   showExtra = false;
 
@@ -33,6 +36,4 @@ export class UserCardComponent {
       this.showExtra = false;
     }
   }
-
-
 }

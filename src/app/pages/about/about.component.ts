@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { UserCardComponent } from '../../components/user-card/user-card.component';
 import { CommonModule } from '@angular/common';
-import { TranslateModule, TranslateService} from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { UserCompany } from '@app/interfaces/hero-card.interface';
 
 @Component({
   selector: 'tyn-about',
@@ -9,10 +10,9 @@ import { TranslateModule, TranslateService} from '@ngx-translate/core';
   templateUrl: './about.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
 export class AboutComponent {
   constructor(private translate: TranslateService) {}
-  users = [
+  usersCompany: UserCompany[] = [
     {
       name: 'Centeno Quispe Marcelino',
       title: 'CEO Founder',
@@ -43,9 +43,7 @@ export class AboutComponent {
     },
   ];
 
-
   getTranslatedDescription(key: string): string {
     return this.translate.instant(key);
-
-}
+  }
 }

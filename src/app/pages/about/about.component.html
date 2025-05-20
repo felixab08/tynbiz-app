@@ -1,12 +1,11 @@
-
 <section class="bg-fondo3">
   <div class="container py-28">
     <div class="my-10 text-center px-10 mx-auto max-w-screen-xl">
       <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none">
-        {{ 'about.title' | translate }}
+        {{ "about.title" | translate }}
       </h1>
       <p class="mb-6 text-lg text-gray-500 lg:mb-8">
-        {{ 'about.description' | translate }}
+        {{ "about.description" | translate }}
       </p>
       <img src="./assets/img/22.jpg" alt="" />
     </div>
@@ -17,12 +16,16 @@
     <div class="flex-wrap items-center grid lg:grid-cols-12">
       <div class="col-span-6">
         <div class="my-10 px-10 mx-auto max-w-screen-xl">
-          <h6 class="uppercase text-primary font-bold mb-2">{{'about.story.title' | translate}} </h6>
-          <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none uppercase">
-            {{'about.story.title2' | translate}}
+          <h6 class="uppercase text-primary font-bold mb-2">
+            {{ "about.story.title" | translate }}
+          </h6>
+          <h1
+            class="mb-4 text-4xl font-extrabold tracking-tight leading-none uppercase"
+          >
+            {{ "about.story.title2" | translate }}
           </h1>
           <p class="mb-6 text-lg text-gray-500 lg:mb-8">
-            {{'about.story.description' | translate}}
+            {{ "about.story.description" | translate }}
           </p>
         </div>
       </div>
@@ -39,20 +42,13 @@
     <div>
       <div class="my-10 text-center px-10 mx-auto max-w-screen-xl">
         <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none">
-          {{'about.team.title' | translate}}
+          {{ "about.team.title" | translate }}
         </h1>
       </div>
-      <div class="flex-wrap items-center grid md:grid-cols-2 lg:grid-cols-12">
-        <div class="md:col-span-1 lg:col-span-3" *ngFor="let user of users" >
-          <tyn-user-card
-          [name]="user.name"
-          [title]="user.title"
-          [description]= "getTranslatedDescription(user.description)"
-          [imageSrc]="user.imageSrc"
-          [reverse]="user.reverse"
-        ></tyn-user-card>
-        </div>
-      </div>
+      <tyn-user-card
+        class="flex-wrap items-center grid md:grid-cols-2 lg:grid-cols-12"
+        [usersCompany]="usersCompany"
+      ></tyn-user-card>
     </div>
   </div>
 </section>

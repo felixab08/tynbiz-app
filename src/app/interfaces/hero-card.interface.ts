@@ -5,3 +5,10 @@ export interface HeroCard {
   button: string;
   demo: string;
 }
+export interface UserCompany {
+  name: string;
+  title: string;
+  description: string;
+  imageSrc: string;
+  reverse: boolean;
+}

@@ -1,1 +1,415 @@
-<p>evidence-proof works!</p>,
+<h3 class="text-3xl font-bold">Datos tienda online</h3>
+<form
+  class="mt-5"
+  autocomplete="off"
+  [formGroup]="myForm"
+  (ngSubmit)="onSave()"
+>
+  <!-- name -->
+  <div class="mb-6">
+    <label
+      for="nameCompany"
+      class="block mb-2 text-sm font-medium"
+      [ngClass]="{
+        ' text-red-700 dark:text-red-500': formUtils.isValiedField(
+          myForm,
+          'nameCompany'
+        )
+      }"
+      >Nombre de la empresa</label
+    >
+    <input
+      type="text"
+      id="nameCompany"
+      formControlName="nameCompany"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      [ngClass]="{
+        ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500 ':
+          formUtils.isValiedField(myForm, 'nameCompany')
+      }"
+    />
+    @if(formUtils.isValiedField(myForm,'nameCompany')){
+    <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+      <span class="font-medium">{{
+        formUtils.getFieldError(myForm, "nameCompany")
+      }}</span>
+    </p>
+    }
+  </div>
+  <div class="mb-6">
+    <label
+      for="ruc"
+      class="block mb-2 text-sm font-medium"
+      [ngClass]="{
+        ' text-red-700 dark:text-red-500': formUtils.isValiedField(
+          myForm,
+          'ruc'
+        )
+      }"
+      >RUC</label
+    >
+    <input
+      type="text"
+      id="ruc"
+      formControlName="ruc"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      [ngClass]="{
+        ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500 ':
+          formUtils.isValiedField(myForm, 'ruc')
+      }"
+    />
+    @if(formUtils.isValiedField(myForm,'ruc')){
+    <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+      <span class="font-medium">{{
+        formUtils.getFieldError(myForm, "ruc")
+      }}</span>
+    </p>
+    }
+  </div>
+  <div class="mb-6">
+    <label
+      for="onlyneNameStore"
+      class="block mb-2 text-sm font-medium"
+      [ngClass]="{
+        ' text-red-700 dark:text-red-500': formUtils.isValiedField(
+          myForm,
+          'onlyneNameStore'
+        )
+      }"
+      >Nombre de la tienda online</label
+    >
+    <input
+      type="text"
+      id="onlyneNameStore"
+      formControlName="onlyneNameStore"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      [ngClass]="{
+        ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
+          formUtils.isValiedField(myForm, 'onlyneNameStore')
+      }"
+    />
+    @if(formUtils.isValiedField(myForm,'onlyneNameStore')){
+    <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+      <span class="font-medium">{{
+        formUtils.getFieldError(myForm, "onlyneNameStore")
+      }}</span>
+    </p>
+    }
+  </div>
+  <div class="mb-6">
+    <label
+      for="onlyneDirecctionStore"
+      class="block mb-2 text-sm font-medium"
+      [ngClass]="{
+        ' text-red-700 dark:text-red-500': formUtils.isValiedField(
+          myForm,
+          'onlyneDirecctionStore'
+        )
+      }"
+      >Enlace de la tienda</label
+    >
+    <input
+      type="text"
+      id="onlyneDirecctionStore"
+      formControlName="onlyneDirecctionStore"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      [ngClass]="{
+        ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
+          formUtils.isValiedField(myForm, 'onlyneDirecctionStore')
+      }"
+    />
+    @if(formUtils.isValiedField(myForm,'onlyneDirecctionStore')){
+    <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+      <span class="font-medium">{{
+        formUtils.getFieldError(myForm, "onlyneDirecctionStore")
+      }}</span>
+    </p>
+    }
+  </div>
+  <div class="mb-6">
+    <div class="grid grid-cols-3 gap-4">
+      <div>
+        <label
+          for="countries"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Departamento</label
+        >
+        <select
+          id="countries"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option selected>Seleccione</option>
+          <option value="US">United States</option>
+          <option value="CA">Canada</option>
+          <option value="FR">France</option>
+          <option value="DE">Germany</option>
+        </select>
+      </div>
+      <div>
+        <label
+          for="countries"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Provincia</label
+        >
+        <select
+          id="countries"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option selected>Seleccione</option>
+          <option value="US">United States</option>
+          <option value="CA">Canada</option>
+          <option value="FR">France</option>
+          <option value="DE">Germany</option>
+        </select>
+      </div>
+      <div>
+        <label
+          for="countries"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Distrito</label
+        >
+        <select
+          id="countries"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option selected>Seleccione</option>
+          <option value="US">United States</option>
+          <option value="CA">Canada</option>
+          <option value="FR">France</option>
+          <option value="DE">Germany</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="mb-6">
+    <label
+      for="direction"
+      class="block mb-2 text-sm font-medium"
+      [ngClass]="{
+        ' text-red-700 dark:text-red-500': formUtils.isValiedField(
+          myForm,
+          'direction'
+        )
+      }"
+      >Dirección</label
+    >
+    <input
+      type="text"
+      id="direction"
+      formControlName="direction"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      [ngClass]="{
+        ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
+          formUtils.isValiedField(myForm, 'direction')
+      }"
+    />
+    @if(formUtils.isValiedField(myForm,'direction')){
+    <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+      <span class="font-medium">{{
+        formUtils.getFieldError(myForm, "direction")
+      }}</span>
+    </p>
+    }
+  </div>
+  <div class="mb-6">
+    <label
+      for="countries"
+      class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+      >Categoría de la tienda</label
+    >
+    <select
+      id="countries"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    >
+      <option selected>Seleccione</option>
+      <option value="US">United States</option>
+      <option value="CA">Canada</option>
+      <option value="FR">France</option>
+      <option value="DE">Germany</option>
+    </select>
+  </div>
+  <div class="mb-6">
+    <label
+      for="categoriOnlineStoreOther"
+      class="block mb-2 text-sm font-medium"
+      [ngClass]="{
+        ' text-red-700 dark:text-red-500': formUtils.isValiedField(
+          myForm,
+          'categoriOnlineStoreOther'
+        )
+      }"
+      >Otra categoría</label
+    >
+    <input
+      type="text"
+      id="categoriOnlineStoreOther"
+      formControlName="categoriOnlineStoreOther"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      [ngClass]="{
+        ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
+          formUtils.isValiedField(myForm, 'categoriOnlineStoreOther')
+      }"
+    />
+    @if(formUtils.isValiedField(myForm,'categoriOnlineStoreOther')){
+    <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+      <span class="font-medium">{{
+        formUtils.getFieldError(myForm, "categoriOnlineStoreOther")
+      }}</span>
+    </p>
+    }
+  </div>
+  <div class="grid gap-6 mb-6 md:grid-cols-2">
+    <!-- email -->
+    <div>
+      <label
+        for="email"
+        class="block mb-2 text-sm font-medium"
+        [ngClass]="{
+          ' text-red-700 dark:text-red-500': formUtils.isValiedField(
+            myForm,
+            'email'
+          )
+        }"
+        >Correo electronico</label
+      >
+      <input
+        type="text"
+        id="email"
+        formControlName="email"
+        class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+        [ngClass]="{
+          ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
+            formUtils.isValiedField(myForm, 'email')
+        }"
+      />
+      @if(formUtils.isValiedField(myForm,'email')){
+      <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+        <span class="font-medium">{{
+          formUtils.getFieldError(myForm, "email")
+        }}</span>
+      </p>
+      }
+    </div>
+    <div>
+      <label
+        for="phone"
+        class="block mb-2 text-sm font-medium"
+        [ngClass]="{
+          ' text-red-700 dark:text-red-500': formUtils.isValiedField(
+            myForm,
+            'phone'
+          )
+        }"
+        >N° celular</label
+      >
+      <input
+        type="text"
+        id="phone"
+        formControlName="phone"
+        class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+        [ngClass]="{
+          ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
+            formUtils.isValiedField(myForm, 'phone')
+        }"
+      />
+      @if(formUtils.isValiedField(myForm,'phone')){
+      <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+        <span class="font-medium">{{
+          formUtils.getFieldError(myForm, "phone")
+        }}</span>
+      </p>
+      }
+    </div>
+  </div>
+  <h3 class="text-2xl font-bold py-4">Datos del representante tienda online</h3>
+  <div class="mb-6">
+    <label
+      for="namePerson"
+      class="block mb-2 text-sm font-medium"
+      [ngClass]="{
+        ' text-red-700 dark:text-red-500': formUtils.isValiedField(
+          myForm,
+          'namePerson'
+        )
+      }"
+      >Nombre</label
+    >
+    <input
+      type="text"
+      id="namePerson"
+      formControlName="namePerson"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      [ngClass]="{
+        ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500 ':
+          formUtils.isValiedField(myForm, 'namePerson')
+      }"
+    />
+    @if(formUtils.isValiedField(myForm,'namePerson')){
+    <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+      <span class="font-medium">{{
+        formUtils.getFieldError(myForm, "namePerson")
+      }}</span>
+    </p>
+    }
+  </div>
+  <div class="mb-6">
+    <label
+      for="lastNamePerson"
+      class="block mb-2 text-sm font-medium"
+      [ngClass]="{
+        ' text-red-700 dark:text-red-500': formUtils.isValiedField(
+          myForm,
+          'lastNamePerson'
+        )
+      }"
+      >Apellidos</label
+    >
+    <input
+      type="text"
+      id="lastNamePerson"
+      formControlName="lastNamePerson"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      [ngClass]="{
+        ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
+          formUtils.isValiedField(myForm, 'lastNamePerson')
+      }"
+    />
+    @if(formUtils.isValiedField(myForm,'lastNamePerson')){
+    <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+      <span class="font-medium">{{
+        formUtils.getFieldError(myForm, "lastNamePerson")
+      }}</span>
+    </p>
+    }
+  </div>
+  <div class="mb-6">
+    <label
+      for="dniPerson"
+      class="block mb-2 text-sm font-medium"
+      [ngClass]="{
+        ' text-red-700 dark:text-red-500': formUtils.isValiedField(
+          myForm,
+          'dniPerson'
+        )
+      }"
+      >DNI</label
+    >
+    <input
+      type="text"
+      id="dniPerson"
+      formControlName="dniPerson"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      [ngClass]="{
+        ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
+          formUtils.isValiedField(myForm, 'dniPerson')
+      }"
+    />
+    @if(formUtils.isValiedField(myForm,'dniPerson')){
+    <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+      <span class="font-medium">{{
+        formUtils.getFieldError(myForm, "dniPerson")
+      }}</span>
+    </p>
+    }
+  </div>
+</form>
