@@ -72,6 +72,11 @@
         "title": "Send invitation",
         "description": "Users can send invitations to friends, family, and others from their shopping room."
       }
+    },
+    "page": {
+      "title_need_virtual": "Tynbiz is designed to meet the needs of your virtual store.",
+      "description_need_virtual": "Choose your plans at your convenience and boost your sales with Tynbiz. Change plans as you grow. Your online store customers will be satisfied when using Tynbiz.",
+      "title_question": "Have a question? Check out the FAQ"
     }
   },
   "about": {

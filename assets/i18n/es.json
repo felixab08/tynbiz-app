@@ -33,34 +33,34 @@
     "section_how": {
       "title": "¿Cómo funciona?",
       "description": "Todo lo que necesitas saber sobre el funcionamiento de nuestro producto.",
-        "step1": {
-          "title": "Regístrate y vincula tu tienda",
-          "description": "Crea tu cuenta y conecta tu tienda virtual a nuestra plataforma. En pocos pasos, podrás gestionar la atención al cliente y las interacciones en tiempo real de manera centralizada."
-        },
-        "step2": {
-          "title": "Configura tu perfil y disponibilidad",
-          "description": "Personaliza tu perfil de vendedor, establece tus horarios de atención y organiza tu disponibilidad para que tus clientes puedan contactarte cuando lo necesiten, o bien planificar interacciones futuras."
-        },
-        "step3": {
-          "title": "Crea eventos de interacción para tu público",
-          "description": "Organiza y publica eventos de interacción programados donde tus clientes pueden unirse para obtener información sobre tus productos, promociones o novedades. Estos eventos serán públicos y podrás atraer a más interesados a tu tienda."
-        },
-        "step4": {
-          "title": "Recibe solicitudes de atención privada de clientes",
-          "description": "Los clientes pueden enviarte consultas privadas en cualquier momento. Estas interacciones son confidenciales y estarán entre tú y el cliente, lo que garantiza un servicio personalizado y privado."
-        },
-        "step5": {
-          "title": "Inicia interacciones personalizadas con tus clientes",
-          "description": "Responde de inmediato a las solicitudes de tus clientes, ya sea en tiempo real o durante los eventos programados. Puedes atender preguntas, resolver dudas o guiar a los compradores a través de un proceso de compra."
-        },
-        "step6": {
-          "title": "Gestiona y da seguimiento a las interacciones",
-          "description": " Mantén un historial completo de todas las interacciones privadas y públicas, lo que te permitirá seguir el progreso de cada cliente, resolver problemas recurrentes y ofrecer un servicio más eficiente en futuras interacciones."
-        }
+      "step1": {
+        "title": "Regístrate y vincula tu tienda",
+        "description": "Crea tu cuenta y conecta tu tienda virtual a nuestra plataforma. En pocos pasos, podrás gestionar la atención al cliente y las interacciones en tiempo real de manera centralizada."
+      },
+      "step2": {
+        "title": "Configura tu perfil y disponibilidad",
+        "description": "Personaliza tu perfil de vendedor, establece tus horarios de atención y organiza tu disponibilidad para que tus clientes puedan contactarte cuando lo necesiten, o bien planificar interacciones futuras."
+      },
+      "step3": {
+        "title": "Crea eventos de interacción para tu público",
+        "description": "Organiza y publica eventos de interacción programados donde tus clientes pueden unirse para obtener información sobre tus productos, promociones o novedades. Estos eventos serán públicos y podrás atraer a más interesados a tu tienda."
+      },
+      "step4": {
+        "title": "Recibe solicitudes de atención privada de clientes",
+        "description": "Los clientes pueden enviarte consultas privadas en cualquier momento. Estas interacciones son confidenciales y estarán entre tú y el cliente, lo que garantiza un servicio personalizado y privado."
+      },
+      "step5": {
+        "title": "Inicia interacciones personalizadas con tus clientes",
+        "description": "Responde de inmediato a las solicitudes de tus clientes, ya sea en tiempo real o durante los eventos programados. Puedes atender preguntas, resolver dudas o guiar a los compradores a través de un proceso de compra."
+      },
+      "step6": {
+        "title": "Gestiona y da seguimiento a las interacciones",
+        "description": " Mantén un historial completo de todas las interacciones privadas y públicas, lo que te permitirá seguir el progreso de cada cliente, resolver problemas recurrentes y ofrecer un servicio más eficiente en futuras interacciones."
+      }
     },
-    "section_room":{
+    "section_room": {
       "title": "Usa tu sala de compras",
-  "description": "Los usuarios que acceden a su sala de compra pueden realizar las siguientes acciones:",
+      "description": "Los usuarios que acceden a su sala de compra pueden realizar las siguientes acciones:",
       "action1": {
         "title": "Agregar productos",
         "description": "Los usuarios puede agregar cualquier producto de una tienda online a su sala de compras."
@@ -73,6 +73,11 @@
         "title": "Enviar invitación",
         "description": "Los usuarios desde su sala de compras puede enviar invitaciones a amigos, familares y otros."
       }
+    },
+    "page": {
+      "title_need_virtual": "Tynbiz esta pensado a la necesidad de tu tienda virtual",
+      "description_need_virtual": "Escoge tus planes a tu comodidad y impulsa tus ventas con Tynbiz, cambia de plan a medida que crescas, tus clientes de tu tienda online estaran satisfechos al usar tynbiz.",
+      "title_question": "Tienes una pregunta? Consulta FAQ"
     }
   },
   "about": {
@@ -83,7 +88,7 @@
       "title2": "Nuestra historia",
       "description": "En 2020, en la ciudad de Ayacucho, un grupo de jóvenes emprendedores comenzó desarrollando sistemas básicos. Con pocos recursos pero con gran compromiso, ayudaron a algunos negocios. Durante esos primeros años, ganaron experiencia directa con las necesidades reales de los pequeños negocios. A mediados de 2023, tras observar una tendencia creciente hacia el comercio electrónico, identificaron un problema común en muchas tiendas online: la atención al cliente era lenta, desorganizada o inexistente. Fue así como nació la idea de crear una plataforma Tynbiz que está en desarrollo. El Startup Tynbiz resolverá una necesidad grande de los consumidores online de manera mas interactiva para una compra mas decidida."
     },
-    "team":{
+    "team": {
       "title": "Nuestro equipo",
       "user1_description": "Ingeniero de sistemas, con amplia experiencia en ventas y diseño UI/UX.",
       "user2_description": "Ingeniero de sistemas, con amplia experiencia en BD y diseño UI/UX.",
