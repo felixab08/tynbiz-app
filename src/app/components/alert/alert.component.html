@@ -1,0 +1,32 @@
+<div
+  class="p-4 mb-4 text-sm rounded-lg bg-green-50 animate-fadeIn fixed bottom-5 right-5 w-52 z-[99999]"
+  role="alert"
+  [ngClass]="{
+    'bg-green-50 text-green-800 dark:text-green-400':
+      alertMenu().type === 'success',
+    'bg-yellow-50 text-yellow-800 dark:text-yellow-400':
+      alertMenu().type === 'warning',
+    'bg-red-50 text-red-800 dark:text-red-400': alertMenu().type === 'error',
+    'bg-blue-50 text-blue-800 dark:text-blue-400': alertMenu().type === 'info',
+  }"
+>
+  <div class="grid grid-cols-6 gap-2.5">
+    @if (alertMenu().type === "success") {
+      <p class="w-12">🤩</p>
+    }
+    @if (alertMenu().type === "warning") {
+      <p class="w-12">😐️</p>
+    }
+    @if (alertMenu().type === "error") {
+      <p class="w-12">😔</p>
+    }
+    @if (alertMenu().type === "info") {
+      <p class="w-12">ℹ️</p>
+    }
+    <div class="col-span-5">
+      <span class="font-bold">{{ alertMenu().title }}</span>
+      <br />
+      {{ alertMenu().message }}
+    </div>
+  </div>
+</div>

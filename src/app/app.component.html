@@ -1,3 +1,6 @@
 <tyn-navbar />
 <router-outlet class="mt-10 pt-5" />
 <tyn-footer />
+@if (_alertService.isAlert()) {
+  <tyn-alert [alertMenu]="_alertService.alertMenu()"> </tyn-alert>
+}

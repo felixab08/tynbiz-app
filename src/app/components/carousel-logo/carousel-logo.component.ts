@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy,  Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'tyn-carousel-logo',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './carousel-logo.component.html',
   styleUrls: ['./carousel-logo.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,

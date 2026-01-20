@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { UserCardComponent } from '../../components/user-card/user-card.component';
-import { CommonModule } from '@angular/common';
+
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { UserCompany } from '@app/interfaces/hero-card.interface';
 
 @Component({
   selector: 'tyn-about',
-  imports: [UserCardComponent, CommonModule, TranslateModule],
+  imports: [UserCardComponent, TranslateModule],
   templateUrl: './about.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
