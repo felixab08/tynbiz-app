@@ -47,30 +47,30 @@ export class EvidenceDemoComponent {
   });
 
   onSave() {
-    // if (this.myForm.invalid) {
-    //   this.myForm.markAllAsTouched();
-    //   return;
-    // }
-    // console.log('Form submitted', this.myForm.value);
-    // this._demoService.postDemo(this.myForm.value as any).subscribe({
-    //   next: (resp) => {
-    //     this.myForm.reset();
-    this._alertService.getAlert(
-      'Bien!!!',
-      'Demo creado correctamente',
-      'success',
-    );
-    // this._router.navigate(['/home']);
-    //     },
-    //     error: (error: any) => {
-    //       console.log('error', error);
-    //       this._alertService.getAlert(
-    //         'Error!!!',
-    //         'Error al crear el demo, intentalo de nuevo mas tarde',
-    //         'error',
-    //       );
-    //     },
-    //   });
-    //   this.myForm.reset();
+    if (this.myForm.invalid) {
+      this.myForm.markAllAsTouched();
+      return;
+    }
+    console.log('Form submitted', this.myForm.value);
+    this._demoService.postDemo(this.myForm.value as any).subscribe({
+      next: (resp) => {
+        this.myForm.reset();
+        this._alertService.getAlert(
+          'Bien!!!',
+          'Demo creado correctamente',
+          'success',
+        );
+        this._router.navigate(['/home']);
+      },
+      error: (error: any) => {
+        console.log('error', error);
+        this._alertService.getAlert(
+          'Error!!!',
+          'Error al crear el demo, intentalo de nuevo mas tarde',
+          'error',
+        );
+      },
+    });
+    this.myForm.reset();
   }
 }

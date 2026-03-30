@@ -1,4 +1,4 @@
-import { JsonPipe } from '@angular/common';
+import { JsonPipe, NgClass } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   FormBuilder,
@@ -11,7 +11,9 @@ import { FormUtils } from '@app/utils/form.util';
 
 @Component({
   selector: 'tyn-evidence',
-  imports: [ReactiveFormsModule, RouterOutlet, RouterLink],
+  imports: [ReactiveFormsModule, RouterOutlet, RouterLink, NgClass],
   templateUrl: './evidence.component.html',
 })
-export default class EvidenceComponent {}
+export default class EvidenceComponent {
+  demolink = true;
+}
