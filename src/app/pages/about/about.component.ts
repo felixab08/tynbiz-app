@@ -3,6 +3,7 @@ import { UserCardComponent } from '../../components/user-card/user-card.componen
 
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { UserCompany } from '@app/interfaces/hero-card.interface';
+import { COMPANYS } from '@app/contantes/proyect.constant';
 
 @Component({
   selector: 'tyn-about',
@@ -12,36 +13,7 @@ import { UserCompany } from '@app/interfaces/hero-card.interface';
 })
 export class AboutComponent {
   constructor(private translate: TranslateService) {}
-  usersCompany: UserCompany[] = [
-    {
-      name: 'Centeno Quispe Marcelino',
-      title: 'CEO Founder',
-      description: 'about.team.user1_description',
-      imageSrc: './assets/img/user.jpeg',
-      reverse: false,
-    },
-    {
-      name: 'Areste Palomino Roberth',
-      title: 'CTO Founder',
-      description: 'about.team.user2_description',
-      imageSrc: './assets/img/user.jpeg',
-      reverse: false,
-    },
-    {
-      name: 'Aroni Huamani Fredy',
-      title: 'COO Co-Founder',
-      description: 'about.team.user3_description',
-      imageSrc: './assets/img/user.jpeg',
-      reverse: true,
-    },
-    {
-      name: 'Valdez Ochoa David',
-      title: 'Backend Full stack',
-      description: 'about.team.user4_description',
-      imageSrc: './assets/img/user.jpeg',
-      reverse: true,
-    },
-  ];
+  usersCompany: UserCompany[] = COMPANYS;
 
   getTranslatedDescription(key: string): string {
     return this.translate.instant(key);
