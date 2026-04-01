@@ -1,11 +1,25 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+import {
+  AlertService,
+  CategoryService,
+  GeographicService,
+  ICategory,
+  IUbigeo,
+} from '@app/services';
+import { SuscriptionService } from '@app/services/suscription.service';
 import { FormUtils } from '@app/utils/form.util';
 
 @Component({
@@ -16,14 +30,71 @@ import { FormUtils } from '@app/utils/form.util';
 })
 export class EvidenceProofComponent {
   private _fb = inject(FormBuilder);
+  departamentos = signal<string[]>(['']);
+  provincias = signal<string[]>(['']);
+  distritos = signal<IUbigeo[]>([]);
+  listCategory = signal<ICategory[]>([]);
+  listPlans = signal<any[]>([]);
+  selectedDepartamento = signal<string>('');
 
   formUtils = FormUtils;
+  private _geographicSrv = inject(GeographicService);
+  private _categorySrv = inject(CategoryService);
+  private _alertService = inject(AlertService);
+  private _suscriptionSrv = inject(SuscriptionService);
+  private _router = inject(Router);
+
+  constructor() {
+    this.getDepartamento();
+    this.getCategories();
+    this.getSubscriptionsPlans();
+  }
+  getCategories() {
+    this._categorySrv.getCategories().subscribe({
+      next: (resp) => {
+        this.listCategory.set(resp);
+      },
+    });
+  }
+  getSubscriptionsPlans() {
+    this._categorySrv.getSubscriptionsPlans().subscribe({
+      next: (resp) => {
+        console.log(resp);
+        this.listPlans.set(resp);
+      },
+    });
+  }
+
+  getDepartamento() {
+    this._geographicSrv.getDepartamento().subscribe({
+      next: (resp) => {
+        this.departamentos.set(resp);
+      },
+    });
+  }
+  handlerDepartamento(event: any) {
+    this.selectedDepartamento.set(event.value);
+    this._geographicSrv.getProvincias(event.value).subscribe({
+      next: (resp) => {
+        this.provincias.set(resp);
+      },
+    });
+  }
+  handlerProvincia(event: any) {
+    this._geographicSrv
+      .getDistrito(this.selectedDepartamento(), event.value)
+      .subscribe({
+        next: (resp) => {
+          this.distritos.set(resp);
+        },
+      });
+  }
 
   myForm: FormGroup = this._fb.group({
-    nameCompany: ['', [Validators.required]],
+    businessName: ['', [Validators.required]],
     ruc: ['', [Validators.required, Validators.minLength(11)]],
-    onlyneNameStore: ['', [Validators.required]],
-    onlyneDirecctionStore: [
+    storeName: ['', [Validators.required]],
+    storeUrl: [
       '',
       [
         Validators.required,
@@ -31,21 +102,22 @@ export class EvidenceProofComponent {
         Validators.pattern(FormUtils.urlRegex),
       ],
     ],
-    ubigeo: ['', [Validators.required]],
-    direction: ['', [Validators.required]],
-    categoriOnlineStore: ['', [Validators.required]],
-    categoriOnlineStoreOther: ['', [Validators.required]],
-    email: [
+    ubigeoId: ['', [Validators.required]],
+    address: ['', []],
+    storeCategory: ['', [Validators.required]],
+    businessEmail: [
       '',
       [Validators.required, Validators.pattern(FormUtils.emailPattern)],
     ],
-    phone: [
+    businessPhone: [
       ,
       [Validators.required, Validators.minLength(9), Validators.maxLength(9)],
     ],
-    namePerson: ['', [Validators.required]],
-    lastNamePerson: ['', [Validators.required]],
-    dniPerson: ['', [Validators.required, Validators.minLength(9)]],
+    firstName: ['', [Validators.required]],
+    lastName: ['', [Validators.required]],
+    documentType: ['DNI', [Validators.required]],
+    documentNumber: ['', [Validators.required, Validators.minLength(8)]],
+    planId: ['', [Validators.required]],
   });
 
   onSave() {
@@ -53,7 +125,28 @@ export class EvidenceProofComponent {
       this.myForm.markAllAsTouched();
       return;
     }
-    console.log('Form submitted', this.myForm.value);
+    this._suscriptionSrv.postSuscription(this.myForm.value as any).subscribe({
+      next: (resp) => {
+        this.myForm.reset();
+        this._alertService.getAlert(
+          'Bien!!!',
+          'subscripción creada correctamente',
+          'success',
+        );
+        this.myForm.reset();
+        this._router.navigate(['/home']);
+      },
+      error: (error: any) => {
+        console.log('error', error.error);
+        this._alertService.getAlert(
+          'Error!!!',
+          error.error.message || 'Ocurrió un error al crear la subscripción',
+          'error',
+        );
+      },
+    });
+  }
+  onClose() {
     this.myForm.reset();
   }
 }

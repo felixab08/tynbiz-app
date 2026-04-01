@@ -7,23 +7,23 @@
     >
       <li>
         <a
-          [routerLink]="['/evidence/proof']"
+          [routerLink]="['/evidence/demo']"
           (click)="demolink = true"
           class="inline-flex items-center px-10 py-3 text-black rounded-lg w-full dark:bg-gray-500 bg-white shadow-lg"
-          aria-current="page"
           [ngClass]="{ 'active bg-primario text-white': demolink }"
         >
-          Empezar prueba gratis
+          Solicitar una demo
         </a>
       </li>
       <li>
         <a
-          [routerLink]="['/evidence/demo']"
+          [routerLink]="['/evidence/proof']"
           (click)="demolink = false"
           class="inline-flex items-center px-10 py-3 text-black rounded-lg w-full dark:bg-gray-500 bg-white shadow-lg"
+          aria-current="page"
           [ngClass]="{ 'active bg-primario text-white': !demolink }"
         >
-          Solicitar una demo
+          Empezar prueba gratis
         </a>
       </li>
     </ul>

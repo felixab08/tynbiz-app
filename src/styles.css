@@ -4,7 +4,43 @@
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
 @source "../node_modules/flowbite-datepicker";
+@theme {
+  --font-body: "Lato", "ui-sans-serif", "system-ui";
+  --font-heading: "Lato", "Inter", "ui-sans-serif", "system-ui";
+  --font-sans: var(--font-heading);
+  --font-mono: "ui-monospace", "SFMono-Regular", "Menlo", "monospace";
+  --spacing-8xl: 90rem;
+  --text-2xs: 0.625rem;
 
+  --animate-fadeIn: fadeIn 0.5s ease-in-out;
+
+  --color-primary: #412984;
+  /* morado */
+  --color-primary-light: #edeeff;
+  /* morado super claro */
+  --color-primary-dark: #28184e;
+  /* morado oscuro */
+  --color-secondary: #dedeff;
+  /* morado claro */
+  --color-secondary-dark: #a5a0ff;
+  /* morado medio */
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}
 .container {
   padding-right: var(--bs-gutter-x, 1rem);
   padding-left: var(--bs-gutter-x, 1rem);
@@ -74,7 +110,17 @@ h4 {
   background-color: var(--colorPrimaryDark) !important;
   color: var(--colorWith) !important;
 }
-
+.button-disabled {
+  box-sizing: border-box;
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-radius: 0.25rem;
+ font-size: 14px;
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+}
 @layer utilities {
   .bg-primario {
     background-color: var(--colorPrimary) !important;

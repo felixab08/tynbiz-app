@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -51,7 +51,6 @@ export class EvidenceDemoComponent {
       this.myForm.markAllAsTouched();
       return;
     }
-    console.log('Form submitted', this.myForm.value);
     this._demoService.postDemo(this.myForm.value as any).subscribe({
       next: (resp) => {
         this.myForm.reset();
@@ -60,6 +59,7 @@ export class EvidenceDemoComponent {
           'Demo creado correctamente',
           'success',
         );
+        this.myForm.reset();
         this._router.navigate(['/home']);
       },
       error: (error: any) => {
@@ -71,6 +71,5 @@ export class EvidenceDemoComponent {
         );
       },
     });
-    this.myForm.reset();
   }
 }
