@@ -144,10 +144,8 @@ export class EvidenceProofComponent {
           'subscripción creada correctamente',
           'success',
         );
-        console.log('entra en next', resp);
-
-        // this.myForm.reset();
-        // this._router.navigate(['/home']);
+        this.myForm.reset();
+        this._router.navigate(['/home']);
       },
       error: (error: any) => {
         console.log('error', error.error);

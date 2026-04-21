@@ -36,7 +36,7 @@ export class AlertService {
     if (snackbar.timeout !== 0) {
       setTimeout(() => {
         this.closeAlert();
-      }, snackbar.timeout || 5000);
+      }, snackbar.timeout || 7000);
     }
   }
 
@@ -53,7 +53,7 @@ export class AlertService {
     title: string,
     message: string,
     type: string = 'info',
-    timeout: number = 5000,
+    timeout: number = 7000,
     redirect?: any,
   ) {
     let snackBar: any = {
