@@ -92,7 +92,16 @@ export class EvidenceProofComponent {
 
   myForm: FormGroup = this._fb.group({
     businessName: ['', [Validators.required]],
-    ruc: ['', [Validators.required, Validators.minLength(11)]],
+    ruc: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(11),
+        Validators.maxLength(11),
+        Validators.max(99999999999),
+        Validators.min(10000000000),
+      ],
+    ],
     storeName: ['', [Validators.required]],
     storeUrl: [
       '',
@@ -115,7 +124,10 @@ export class EvidenceProofComponent {
     ],
     firstName: ['', [Validators.required]],
     lastName: ['', [Validators.required]],
-    documentType: ['DNI', [Validators.required]],
+    documentType: [
+      'DNI',
+      [Validators.required, Validators.min(10000000), Validators.max(99999999)],
+    ],
     documentNumber: ['', [Validators.required, Validators.minLength(8)]],
     planId: ['', [Validators.required]],
   });
@@ -127,14 +139,15 @@ export class EvidenceProofComponent {
     }
     this._suscriptionSrv.postSuscription(this.myForm.value as any).subscribe({
       next: (resp) => {
-        this.myForm.reset();
         this._alertService.getAlert(
           'Bien!!!',
           'subscripción creada correctamente',
           'success',
         );
-        this.myForm.reset();
-        this._router.navigate(['/home']);
+        console.log('entra en next', resp);
+
+        // this.myForm.reset();
+        // this._router.navigate(['/home']);
       },
       error: (error: any) => {
         console.log('error', error.error);
@@ -146,7 +159,9 @@ export class EvidenceProofComponent {
       },
     });
   }
+
   onClose() {
     this.myForm.reset();
+    this._router.navigate(['/home']);
   }
 }

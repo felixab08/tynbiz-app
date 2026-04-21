@@ -31,7 +31,9 @@ export class FormUtils {
         case 'minlength':
           return `El campo debe ser al menos ${errors['minlength'].requiredLength} caracteres`;
         case 'min':
-          return `El campo debe ser mayor que ${errors['min'].min}`;
+          return `Cantidad de dígitos incorrectos`;
+        case 'max':
+          return `Cantidad de dígitos incorrectos`;
         case 'pattern':
           if (errors['pattern'].requiredPattern === FormUtils.doblePattern) {
             return `El campo debe ser un nombre y apellido`;
@@ -96,7 +98,7 @@ export class FormUtils {
   static dateRangeCurrentDate(
     formGroup: FormGroup,
     startDate: string,
-    endDate: string
+    endDate: string,
   ): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       if (!control.value) {
@@ -114,17 +116,17 @@ export class FormUtils {
         const compararFechaActual = new Date(
           fechaActual.getFullYear(),
           fechaActual.getMonth(),
-          fechaActual.getDate()
+          fechaActual.getDate(),
         );
         const compararFechaDesde = new Date(
           fechaDesde.getFullYear(),
           fechaDesde.getMonth(),
-          fechaDesde.getDate()
+          fechaDesde.getDate(),
         );
         const compararFechaHasta = new Date(
           fechaHasta.getFullYear(),
           fechaHasta.getMonth(),
-          fechaHasta.getDate()
+          fechaHasta.getDate(),
         );
 
         if (
@@ -139,14 +141,14 @@ export class FormUtils {
           formGroup.controls[startDate].setErrors(
             this._deleteError(
               formGroup.controls[startDate].errors,
-              'errorDateRange'
-            )
+              'errorDateRange',
+            ),
           );
           formGroup.controls[endDate].setErrors(
             this._deleteError(
               formGroup.controls[endDate].errors,
-              'errorDateRange'
-            )
+              'errorDateRange',
+            ),
           );
         }
       }
@@ -183,7 +185,7 @@ export class FormUtils {
   static compareNumbers(
     formGroup: FormGroup,
     startNumber: any,
-    endNumber: any
+    endNumber: any,
   ): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       if (!control.value) {
@@ -201,14 +203,14 @@ export class FormUtils {
           formGroup.controls[startNumber].setErrors(
             this._deleteError(
               formGroup.controls[startNumber].errors,
-              'errorCompareNumber'
-            )
+              'errorCompareNumber',
+            ),
           );
           formGroup.controls[endNumber].setErrors(
             this._deleteError(
               formGroup.controls[endNumber].errors,
-              'errorCompareNumber'
-            )
+              'errorCompareNumber',
+            ),
           );
         }
       }

@@ -22,7 +22,7 @@
       type="text"
       id="businessName"
       formControlName="businessName"
-      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-primary"
       [ngClass]="{
         ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500 ':
           formUtils.isValiedField(myForm, 'businessName'),
@@ -52,7 +52,7 @@
       type="number"
       id="ruc"
       formControlName="ruc"
-      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-primary"
       [ngClass]="{
         ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500 ':
           formUtils.isValiedField(myForm, 'ruc'),
@@ -82,7 +82,7 @@
       type="text"
       id="storeName"
       formControlName="storeName"
-      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-primary"
       [ngClass]="{
         ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
           formUtils.isValiedField(myForm, 'storeName'),
@@ -112,7 +112,7 @@
       type="text"
       id="storeUrl"
       formControlName="storeUrl"
-      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-primary"
       [ngClass]="{
         ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
           formUtils.isValiedField(myForm, 'storeUrl'),
@@ -205,7 +205,7 @@
       type="text"
       id="address"
       formControlName="address"
-      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-primary"
       [ngClass]="{
         ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
           formUtils.isValiedField(myForm, 'address'),
@@ -269,7 +269,7 @@
       type="text"
       id="categoriOnlineStoreOther"
       formControlName="categoriOnlineStoreOther"
-      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-primary"
       [ngClass]="{
         ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
           formUtils.isValiedField(myForm, 'categoriOnlineStoreOther'),
@@ -301,7 +301,7 @@
         type="text"
         id="businessEmail"
         formControlName="businessEmail"
-        class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+        class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-primary"
         [ngClass]="{
           ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
             formUtils.isValiedField(myForm, 'businessEmail'),
@@ -331,7 +331,7 @@
         type="text"
         id="businessPhone"
         formControlName="businessPhone"
-        class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+        class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-primary"
         [ngClass]="{
           ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
             formUtils.isValiedField(myForm, 'businessPhone'),
@@ -363,7 +363,7 @@
       type="text"
       id="firstName"
       formControlName="firstName"
-      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-primary"
       [ngClass]="{
         ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500 ':
           formUtils.isValiedField(myForm, 'firstName'),
@@ -393,7 +393,7 @@
       type="text"
       id="lastName"
       formControlName="lastName"
-      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+      class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-primary"
       [ngClass]="{
         ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
           formUtils.isValiedField(myForm, 'lastName'),
@@ -437,10 +437,10 @@
         >Número de documento *</label
       >
       <input
-        type="text"
+        type="number"
         id="documentNumber"
         formControlName="documentNumber"
-        class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-purple-800"
+        class="border text-sm rounded-lg dark:bg-gray-700 block w-full p-2.5 focus:border-primary"
         [ngClass]="{
           ' border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500':
             formUtils.isValiedField(myForm, 'documentNumber'),

@@ -14,7 +14,7 @@
 
   --animate-fadeIn: fadeIn 0.5s ease-in-out;
 
-  --color-primary: #412984;
+  --color-primary: #5e63b6;
   /* morado */
   --color-primary-light: #edeeff;
   /* morado super claro */
@@ -115,11 +115,13 @@ h4 {
   opacity: 0.5;
   cursor: not-allowed;
   border-radius: 0.25rem;
- font-size: 14px;
+  font-size: 14px;
   border-style: var(--tw-border-style);
   border-width: 1px;
   --tw-shadow: 0 1px 2px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.05));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  box-shadow:
+    var(--tw-inset-shadow), var(--tw-inset-ring-shadow),
+    var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
 }
 @layer utilities {
   .bg-primario {
@@ -169,5 +171,16 @@ h4 {
   }
   .navbar-nav .nav-item .nav-link:hover {
     color: var(--color-black);
+  }
+  .button-primary {
+    @apply px-5 py-2.5 text-sm cursor-pointer font-medium text-white focus:outline-none bg-primary rounded-lg border border-primary hover:bg-primary-light hover:text-primary focus-within:outline-none focus:ring-4 focus:ring-primary-light;
+  }
+
+  .button-secondary {
+    @apply py-2.5 px-5 md:ms-3 text-sm cursor-pointer font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-400 hover:bg-gray-200 hover:text-gray-600 focus-within:outline-none focus:ring-4 focus:ring-gray-100;
+  }
+
+  .button-disabled {
+    @apply box-border border shadow-xs font-medium leading-5 rounded text-sm px-4 py-2.5 focus:outline-none;
   }
 }
