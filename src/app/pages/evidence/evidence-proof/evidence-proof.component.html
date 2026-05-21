@@ -236,7 +236,7 @@
       }
     </select>
   </div>
-    <div class="mb-6">
+  <div class="mb-6">
     <label
       for="planId"
       class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -454,6 +454,25 @@
         </p>
       }
     </div>
+    <div class="flex items-center">
+      <input
+        id="checkbox-remember"
+        type="checkbox"
+        value=""
+        class="w-4 h-4 border border-default-medium rounded-xs bg-neutral-secondary-medium focus:ring-2 focus:ring-brand-soft"
+      />
+      <label
+        for="checkbox-remember"
+        class="ms-2 text-sm font-medium text-heading"
+        >Acepto los terminos y condiciones
+        <a
+          (click)="isOpen = true"
+          class="ms-1 text-sm font-medium text-brand-soft hover:underline text-blue-700"
+        >
+          Ver términos y condiciones
+        </a>
+      </label>
+    </div>
   </div>
   <div class="flex justify-end mt-6">
     <button
@@ -473,3 +492,12 @@
     </button>
   </div>
 </form>
+
+<app-modal [isOpen]="isOpen" (closeModal)="closeModal()" type="long">
+  <pdf-viewer
+    [src]="pdfSrc"
+    [render-text]="true"
+    style="display: block; height: 60vh"
+  >
+  </pdf-viewer>
+</app-modal>

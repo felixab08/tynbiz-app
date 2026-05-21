@@ -21,10 +21,12 @@ import {
 } from '@app/services';
 import { SuscriptionService } from '@app/services/suscription.service';
 import { FormUtils } from '@app/utils/form.util';
+import { ModalComponent } from '@app/components/modal/modal.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @Component({
   selector: 'tyn-evidence-proof',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, ModalComponent, PdfViewerModule],
   templateUrl: './evidence-proof.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -36,6 +38,8 @@ export class EvidenceProofComponent {
   listCategory = signal<ICategory[]>([]);
   listPlans = signal<any[]>([]);
   selectedDepartamento = signal<string>('');
+  public isOpen: boolean = false;
+  pdfSrc = './assets/pdf/documento.pdf'; // Ruta local o URL
 
   formUtils = FormUtils;
   private _geographicSrv = inject(GeographicService);
@@ -161,5 +165,8 @@ export class EvidenceProofComponent {
   onClose() {
     this.myForm.reset();
     this._router.navigate(['/home']);
+  }
+  closeModal() {
+    this.isOpen = false;
   }
 }
