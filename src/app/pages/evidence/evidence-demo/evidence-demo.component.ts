@@ -7,6 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IErrorGeneralResp } from '@app/interfaces/error.interface';
 import { AlertService, DemoService } from '@app/services';
 import { FormUtils } from '@app/utils/form.util';
 
@@ -62,11 +63,12 @@ export class EvidenceDemoComponent {
         this.myForm.reset();
         this._router.navigate(['/home']);
       },
-      error: (error: any) => {
+      error: (error: IErrorGeneralResp) => {
         console.log('error', error);
         this._alertService.getAlert(
           'Error!!!',
-          'Error al crear el demo, intentalo de nuevo mas tarde',
+          error.error.detail ||
+            'Error al crear el demo, intentalo de nuevo mas tarde',
           'error',
         );
       },

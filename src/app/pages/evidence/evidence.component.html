@@ -1,6 +1,6 @@
 <div class="md:flex md:p-16 sm:px-0 bg-fondo3 py-16">
   <div
-    class="md:flex flex-col md:w-full xl:w-1/2 lg:w-1/3 rounded-lg p-6 text-center m-4"
+    class="md:flex flex-col md:w-full xl:w-1/2 lg:w-1/3 rounded-lg p-6 text-center m-4 dark:bg-gray-700"
   >
     <ul
       class="flex-column space-y space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400"
@@ -8,22 +8,19 @@
       <li>
         <a
           [routerLink]="['/evidence/demo']"
-          (click)="demolink = true"
-          class="inline-flex items-center px-10 py-3 text-black rounded-lg w-full dark:bg-gray-500 bg-white shadow-lg"
-          [ngClass]="{ 'active bg-primario text-white': demolink }"
-        >
-          Solicitar una demo
+          routerLinkActive="btn-primary"
+          [routerLinkActiveOptions]="{ exact: true }"        
+          class="inline-flex items-center px-10 py-3 text-black rounded-lg
+          w-full dark:bg-gray-500 bg-white shadow-lg" > Solicitar una demo
         </a>
       </li>
       <li>
         <a
           [routerLink]="['/evidence/proof']"
-          (click)="demolink = false"
-          class="inline-flex items-center px-10 py-3 text-black rounded-lg w-full dark:bg-gray-500 bg-white shadow-lg"
-          aria-current="page"
-          [ngClass]="{ 'active bg-primario text-white': !demolink }"
-        >
-          Empezar prueba gratis
+          routerLinkActive="btn-primary"
+          [routerLinkActiveOptions]="{ exact: true }"        
+          class="inline-flex items-center px-10 py-3 text-black rounded-lg
+          w-full dark:bg-gray-500 bg-white shadow-lg" > Empezar prueba gratis
         </a>
       </li>
     </ul>

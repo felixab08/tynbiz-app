@@ -6,18 +6,14 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'tyn-evidence',
-  imports: [ReactiveFormsModule, RouterOutlet, RouterLink, NgClass],
+  imports: [ReactiveFormsModule, RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './evidence.component.html',
 })
 export default class EvidenceComponent {
   _router = inject(Router);
-  demolink = true;
-  constructor() {
-    console.log(this._router.url);
-  }
 }

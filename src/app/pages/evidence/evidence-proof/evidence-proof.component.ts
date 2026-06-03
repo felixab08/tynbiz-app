@@ -15,18 +15,21 @@ import { Router } from '@angular/router';
 import {
   AlertService,
   CategoryService,
+  FileDocumentsService,
   GeographicService,
   ICategory,
   IUbigeo,
 } from '@app/services';
 import { SuscriptionService } from '@app/services/suscription.service';
 import { FormUtils } from '@app/utils/form.util';
-import { ModalComponent } from '@app/components/modal/modal.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { IErrorGeneralResp } from '@app/interfaces/error.interface';
+import { IGeneralPDF } from '@app/interfaces';
+import { ConditionModal } from '@app/components';
 
 @Component({
   selector: 'tyn-evidence-proof',
-  imports: [ReactiveFormsModule, CommonModule, ModalComponent, PdfViewerModule],
+  imports: [ReactiveFormsModule, CommonModule, ConditionModal, PdfViewerModule],
   templateUrl: './evidence-proof.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -40,7 +43,8 @@ export class EvidenceProofComponent {
   selectedDepartamento = signal<string>('');
   public isOpen: boolean = false;
   pdfSrc = './assets/pdf/documento.pdf'; // Ruta local o URL
-
+  private _fileDocSrv = inject(FileDocumentsService);
+  filesResp = signal<IGeneralPDF[] | null>(null); // Ruta local o URL
   formUtils = FormUtils;
   private _geographicSrv = inject(GeographicService);
   private _categorySrv = inject(CategoryService);
@@ -92,6 +96,21 @@ export class EvidenceProofComponent {
           this.distritos.set(resp);
         },
       });
+  }
+
+  getFileDocumentsByClient() {
+    this._fileDocSrv.getFileDocumentsByClient().subscribe({
+      next: (data) => {
+        this.filesResp.set(data);
+      },
+      error: (error) => {
+        this._alertService.getAlert(
+          'Error!!!',
+          error.error.detail || 'Error al obtener los documentos',
+          'error',
+        );
+      },
+    });
   }
 
   myForm: FormGroup = this._fb.group({
@@ -151,11 +170,11 @@ export class EvidenceProofComponent {
         this.myForm.reset();
         this._router.navigate(['/home']);
       },
-      error: (error: any) => {
+      error: (error: IErrorGeneralResp) => {
         console.log('error', error.error);
         this._alertService.getAlert(
           'Error!!!',
-          error.error.message || 'Ocurrió un error al crear la subscripción',
+          error.error.detail || 'Ocurrió un error al crear la subscripción',
           'error',
         );
       },
@@ -168,5 +187,8 @@ export class EvidenceProofComponent {
   }
   closeModal() {
     this.isOpen = false;
+  }
+  condicionCloseModal(event: boolean) {
+    this.isOpen = event;
   }
 }

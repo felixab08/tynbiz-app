@@ -140,7 +140,7 @@ h4 {
     background-color: var(--colorNav) !important;
   }
   .bg-fondo3 {
-    background-color: var(--colorFondo3) !important;
+    @apply bg-gray-100 dark:bg-gray-700 dark:text-white;
   }
   .text-primary {
     color: var(--colorPrimary) !important;
