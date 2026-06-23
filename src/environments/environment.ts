@@ -1,3 +1,3 @@
 export const environment = {
-  baseUrl: 'https://tynby-plataform-production-f3eb.up.railway.app/api/v1',
+  baseUrl: 'https://tynby-plataform-3cgs4.ondigitalocean.app/api/v1',
 };
